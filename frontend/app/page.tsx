@@ -69,7 +69,7 @@ export default function Home() {
       formData.append("file", file);
 
       const ocrResponse = await fetch(
-        "http://localhost:8000/api/v1/ocr/extract",
+        "https://structify-ai-backend.onrender.com/api/v1/ocr/extract",
         {
           method: "POST",
           body: formData,
@@ -94,7 +94,7 @@ export default function Home() {
       setStatus("Building Document Structure...");
 
       const structureResponse = await fetch(
-        "http://localhost:8000/api/v1/structure/analyze",
+        "https://structify-ai-backend.onrender.com/api/v1/structure/analyze",
         {
           method: "POST",
           headers: {
@@ -146,7 +146,7 @@ export default function Home() {
 
     try {
       const response = await fetch(
-        "http://localhost:8000/api/v1/text/analyze",
+        "https://structify-ai-backend.onrender.com/api/v1/text/analyze",
         {
           method: "POST",
           headers: {
@@ -183,7 +183,7 @@ export default function Home() {
 
     try {
       const response = await fetch(
-        `http://localhost:8000/api/v1/export?format_type=${format}`,
+        `https://structify-ai-backend.onrender.com/api/v1/export?format_type=${format}`,
         {
           method: "POST",
           headers: {

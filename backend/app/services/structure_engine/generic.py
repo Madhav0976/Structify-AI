@@ -11,12 +11,17 @@ from app.schemas.structure import StructuredDocument, StructuredBlock, BlockType
 from .base import BaseDocumentDetector
 from .features import extract_geometric_features
 
-# Load spaCy NLP model (fast, small English model)
-nlp = spacy.load("en_core_web_sm")
+# Lazy-loaded spaCy model
+nlp = None
 
 class GenericDocumentDetector(BaseDocumentDetector):
 
     def detect(self, blocks: List[OCRTextBlock]) -> StructuredDocument:
+        global nlp
+
+        if nlp is None:
+            nlp = spacy.load("en_core_web_sm")
+            
         if not blocks:
             return StructuredDocument(document_type="generic", blocks=[], total_blocks=0)
 

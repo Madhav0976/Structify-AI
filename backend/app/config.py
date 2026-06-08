@@ -34,6 +34,7 @@ class Settings(BaseSettings):
         "http://localhost:3000",     # Next.js dev server
         "http://127.0.0.1:3000",
         "http://localhost:8000",     # FastAPI docs
+        "https://structify-ai-beta.vercel.app",
     ]
 
     # --- Feature Flags (A/B Testing) ---

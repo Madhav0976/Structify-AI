@@ -21,7 +21,7 @@ easyocr==1.7.2
 Pillow==12.2.0
 
 # --- NLP & Structure Engine ---
-spacy==3.8.4
+spacy>=3.8.0
 rapidfuzz==3.12.1
 pyspellchecker==0.8.0
 

@@ -1,0 +1,52 @@
+# ===========================
+# Structify AI - Git Ignore
+# ===========================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual Environment
+backend/venv/
+venv/
+
+# Environment Variables
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+*.egg-info/
+dist/
+build/
+
+# Uploads
+backend/uploads/
+
+# Database
+*.db
+*.sqlite3
+
+# Node (for frontend later)
+node_modules/
+.next/
+out/
+
+# Logs
+*.log
+
+# Structify Generated Files
+backend/output.*
+backend/*response.json
+backend/test_image.png
+backend/test_text.json
+*.bak

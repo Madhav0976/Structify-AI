@@ -17,23 +17,11 @@ router = APIRouter(
 
 @router.post("/analyze")
 def analyze_text(request: TextRequest):
-    """
-    Raw Text
-      ↓
-    Repair
-      ↓
-    Structure Detection
-      ↓
-    Structured Document
-    """
 
-    raw_text = request.text
-
-    # Repair Text
-    #repair_pipeline = RepairPipeline(domain="report")
-    #repaired_text = repair_pipeline.fix_text(raw_text)
-    
-    repaired_text = raw_text
+    return {
+        "status": "working",
+        "text": request.text
+    }
 
     # Convert lines into OCR-like blocks
     lines = [

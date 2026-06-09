@@ -324,6 +324,6 @@ Contributions are welcome! Please follow these structured steps to submit change
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](https://www.google.com/search?q=https://github.com/Madhav0976/Structify-AI/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/Madhav0976/Structify-AI/blob/main/LICENSE)file for details.
 
 ---

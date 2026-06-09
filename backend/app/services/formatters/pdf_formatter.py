@@ -45,8 +45,8 @@ class PdfFormatter(BaseFormatter):
             elif block.type == BlockType.LIST_ITEM:
                 pdf.set_font("helvetica", "", 12)
                 text = block.text
-                if not any(text.startswith(c) for c in ["-", "*", "•", "1.", "2."]):
-                    text = f"• {text}"
+                if not any(text.startswith(c) for c in ["-", "*", "1.", "2."]):
+                    text = f"- {text}"
                 # Indent bullet points slightly
                 pdf.set_x(15)
                 pdf.multi_cell(0, 6, text, new_x="LMARGIN", new_y="NEXT")
@@ -63,4 +63,4 @@ class PdfFormatter(BaseFormatter):
                 pdf.ln(4)
                 
         # output() with no filename returns a bytearray
-        return bytes(pdf.output())
+        return pdf.output()

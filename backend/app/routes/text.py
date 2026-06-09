@@ -22,8 +22,15 @@ def analyze_text(request: TextRequest):
 
     structure_engine = StructureEngine()
 
+    result = structure_engine.process(
+        blocks=[],
+        doc_type="auto",
+        enable_repair=False
+    )
+
     return {
-        "step": "after_structure_init"
+        "step": "after_process",
+        "result": str(result)
     }
 
     structure_engine = StructureEngine()

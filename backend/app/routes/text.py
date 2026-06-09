@@ -20,9 +20,10 @@ def analyze_text(request: TextRequest):
 
     raw_text = request.text
 
+    structure_engine = StructureEngine()
+
     return {
-        "step": "before_structure",
-        "text": raw_text
+        "step": "after_structure_init"
     }
 
     structure_engine = StructureEngine()

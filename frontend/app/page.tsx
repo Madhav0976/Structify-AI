@@ -146,7 +146,7 @@ export default function Home() {
 
     try {
       const response = await fetch(
-        "http://localhost:8000/api/v1/text/analyze",
+        "https://structify-ai-backend.onrender.com/api/v1/text/analyze",
         {
           method: "POST",
           headers: {

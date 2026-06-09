@@ -44,7 +44,12 @@ class PdfFormatter(BaseFormatter):
                 
             elif block.type == BlockType.LIST_ITEM:
                 pdf.set_font("helvetica", "", 12)
-                text = block.text
+                text = (
+                    block.text
+                    .replace("•", "-")
+                    .replace("–", "-")
+                    .replace("—", "-")
+                )
                 if not any(text.startswith(c) for c in ["-", "*", "1.", "2."]):
                     text = f"- {text}"
                 # Indent bullet points slightly

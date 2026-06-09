@@ -14,7 +14,6 @@ router = APIRouter(
     tags=["Text Analysis"]
 )
 
-
 @router.post("/analyze")
 def analyze_text(request: TextRequest):
 
@@ -24,7 +23,7 @@ def analyze_text(request: TextRequest):
 
     result = structure_engine.process(
         blocks=[],
-        doc_type="auto",
+        doc_type="generic",   # auto -> generic
         enable_repair=False
     )
 

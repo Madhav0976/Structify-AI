@@ -1,20 +1,22 @@
 """
 Generic Document Structure Detector
-
-Fallback detector that uses NLP (spaCy) + Geometry to figure out structure.
 """
-import spacy
 from typing import List
 
 from app.schemas.ocr import OCRTextBlock
-from app.schemas.structure import StructuredDocument, StructuredBlock, BlockType
+from app.schemas.structure import StructuredDocument
 from .base import BaseDocumentDetector
-from .features import extract_geometric_features
 
-# Lazy-loaded spaCy model
-nlp = None
 
 class GenericDocumentDetector(BaseDocumentDetector):
+
+    def detect(self, blocks: List[OCRTextBlock]) -> StructuredDocument:
+
+        return StructuredDocument(
+            document_type="generic",
+            blocks=[],
+            total_blocks=0
+        )
 
     def detect(self, blocks: List[OCRTextBlock]) -> StructuredDocument:
         global nlp

@@ -30,8 +30,10 @@ def analyze_text(request: TextRequest):
     raw_text = request.text
 
     # Repair Text
-    repair_pipeline = RepairPipeline(domain="report")
-    repaired_text = repair_pipeline.fix_text(raw_text)
+    #repair_pipeline = RepairPipeline(domain="report")
+    #repaired_text = repair_pipeline.fix_text(raw_text)
+    
+    repaired_text = raw_text
 
     # Convert lines into OCR-like blocks
     lines = [

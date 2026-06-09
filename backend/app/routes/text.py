@@ -18,11 +18,14 @@ router = APIRouter(
 @router.post("/analyze")
 def analyze_text(request: TextRequest):
 
+    raw_text = request.text
+
     return {
-        "status": "working",
-        "text": request.text
+        "step": "before_structure",
+        "text": raw_text
     }
 
+    structure_engine = StructureEngine()
     # Convert lines into OCR-like blocks
     lines = [
         line.strip()
